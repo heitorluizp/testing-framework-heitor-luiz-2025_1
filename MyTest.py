@@ -23,8 +23,6 @@ class MyTest(TestCase):
         print('test_c')
 
 
-
-
 result = TestResult()
 
 test = MyTest('test_a')
