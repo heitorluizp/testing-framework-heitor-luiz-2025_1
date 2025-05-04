@@ -1,4 +1,6 @@
 from TestCase import TestCase
+from TestResult import TestResult 
+
 
 class MyTest(TestCase):
 
@@ -19,9 +21,16 @@ class MyTest(TestCase):
 
 
 
+
+result = TestResult()
+
 test = MyTest('test_a')
-test.run()
+test.run(result)
+
 test = MyTest('test_b')
-test.run()
+test.run(result)
+
 test = MyTest('test_c')
-test.run()
+test.run(result)
+
+print(result.summary())
