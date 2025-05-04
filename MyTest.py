@@ -3,6 +3,9 @@ from TestResult import TestResult
 from TestCaseTest import TestCaseTest
 from TestSuite import TestSuite
 from TestSuiteTest import TestSuiteTest
+from TestLoader import TestLoader
+from TestLoaderTest import TestLoaderTest
+from TestRunner import TestRunner
 
 
 class MyTest(TestCase):
@@ -84,3 +87,17 @@ suite.add_test(TestSuiteTest('test_suite_multiple_run'))
 
 suite.run(result3)
 print(result3.summary())     
+
+#Teste TestLoaderTest
+result4 = TestResult()
+loader = TestLoader()
+suite2 = loader.make_suite(TestLoaderTest)
+suite2.run(result4)
+print(result4.summary())
+
+#Teste com TestRunner
+loader2 = TestLoader()
+suite3 = loader2.make_suite(TestLoaderTest)
+
+runner = TestRunner()
+runner.run(suite3)
